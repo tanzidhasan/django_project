@@ -1,0 +1,15 @@
+{% extends 'blog/Common.html' %}
+{% load static %}
+
+    {% block head %}
+        <title>নিরাপদ রক্তের বন্ধন(নিরব) | NIrapod ROkter Bondhon(NIROB) - Login</title>
+        <link rel="shortcut icon" type="image/jpg" href=" {% static 'blog/img/Background_image.jpg' %} ">
+        <link rel="stylesheet" href=" {% static 'users\Logout_Page_style.css' %} ">
+    {% endblock head %}
+
+{% block body %}
+
+    <h2>You have been logged out.</h2>
+    <a href="{% url 'user-login' %}"><h2>Login</h2></a><h2> again</h2>
+    
+{% endblock body %}

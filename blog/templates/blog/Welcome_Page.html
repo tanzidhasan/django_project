@@ -1,0 +1,36 @@
+{% extends 'blog/Common.html' %}
+{% load static %}
+    
+        {% block head %}
+            <link rel="stylesheet" href=" {% static 'blog/Welcome_Page_style.css' %} ">
+            <link rel="shortcut icon" type="image/jpg" href=" {% static 'blog/img/Background_image.jpg' %} ">
+            <title>নিরাপদ রক্তের বন্ধন(নিরব) | NIrapod ROkter Bondhon(NIROB) - Home</title>
+        {% endblock head %}
+
+
+    {% block body %}
+        <header class="header">
+
+            <div class="logo-box">
+                <a href="{% url 'blog-home' %}" class="btn logo"><img src=" {% static 'blog/img/Logo_image.jpg' %} " alt="Logo" class="logo"></a>
+                <a href="{% url 'blog-home' %}" class="btn logo_text"><h2><b>নিরাপদ রক্তের বন্ধন(নিরব)<br>NIrapod ROkter Bondhon(NIROB)</b></h2></a>
+            </div>
+
+            {% if user.is_authenticated %}
+            <div class="text-main">
+                <span class="textdb">Donate Blood</span>
+                <span class="textsl">To Save Life</span> 
+            </div>
+            {% else %}
+            <div class="text-main">
+                <span class="textdb">Donate Blood</span>
+                <a href="{% url 'user-register' %}" class="butn register">Join</a>
+                <span class="textor">Or</span> 
+                <a href="{% url 'user-login' %}" class="butn login">Login</a>
+                <span class="textsl">To Save Life</span> 
+            </div>
+            {% endif %}
+            
+        </header>
+
+    {% endblock body %}

@@ -1,0 +1,271 @@
+.main{
+    background-image: linear-gradient(to right bottom,#5ac39894, #10905f96) ,url("img/blood_background_profile.jpg");
+    background-size: cover;
+    background-position: top;
+}
+
+.header{
+    height: 10vh;
+    margin-bottom: 0.5rem;
+}
+
+.logo-box{
+    position: absolute;
+    padding: 1rem;
+}
+
+
+.logo{
+    width: 5rem;
+    height: 5.5rem;
+}
+
+.logo_text{
+    font-size: 1.65rem;
+    color: #f34242;
+
+}
+
+.btn:link,
+.btn:visited{
+    text-decoration: none;
+    display: inline-block;
+}
+
+.section-profile{
+    padding: 2rem;
+}
+
+.u-center-text_pro{
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.profile_heading{
+    background-color: white;
+    padding: 1.5rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    font-size: 4rem;
+    font-weight: 700;
+    border-radius: 5rem;
+    color: #05462dbb;
+
+}
+
+.heading-secondary{
+    background-color: aqua;
+    font-size: 3.5rem;
+    font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2rem;
+}
+
+.row-pro{
+    max-width: 114rem;
+    margin: 0 auto;
+}
+
+
+.profile{
+    width: 100%;
+    margin: 0 auto;
+    box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.103);
+    background-color: rgba(255, 255, 255, 0.445);
+    border-radius: 3px;
+    padding: 3rem;
+    padding-left: 5rem;
+    font-size: 1.6rem;
+}
+
+
+.profile__text{
+    text-align: justify;
+}
+
+.attribute{
+    background-color: #078d5a96;
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 2rem;
+}
+
+.attr_name{
+    color: white;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 1rem;
+}
+
+.attr_data{
+    color: white;
+    font-size: 1.7rem;
+    margin: 1rem;
+}
+
+.u-center-text_post{
+    text-align: center;
+    margin-bottom: 3rem;
+    margin-top: 5rem;
+}
+
+.post_heading{
+    background-color: white;
+    padding: 1.5rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    font-size: 4rem;
+    font-weight: 700;
+    border-radius: 5rem;
+    color: #005033fd;
+}
+
+.row{
+    width: 42rem;
+    margin-left: 0.2rem;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+}
+
+
+.post{
+    width: 100%;
+    margin: 0 auto;
+    box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.103);
+    background-color: rgba(255, 255, 255, 0.486);
+    border-radius: 15px;
+    padding: 1rem;
+    padding-left: 1.5rem;
+    font-size: 1.6rem;
+}
+
+.post_header{
+    border-radius: 15px;
+    padding: 1rem;
+    background-color: #078d5a96;
+    margin-bottom: 1rem;
+}
+
+.post_title{
+    padding-bottom: 1rem;
+}
+
+.post_title_text{
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.date{
+    color: white;
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.post_body{
+    padding: 1rem;
+    border-radius: 15px;
+    background-color:#078d5a96;
+}
+
+.post_attr{
+    margin: 0.5rem;
+    background-color:white;
+    border-radius: 3px;
+    padding: 0.5rem;
+}
+
+.post_attr_name{
+    color: #005033fd;
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+.post_attr_data{
+    color: #005033fd;
+    margin-left: 0.5rem;
+    font-size: 1.8rem;
+}
+
+.post_details{
+    text-decoration: none;
+    padding: 0.2rem;
+    background-color: white;
+    color: #005033fd;
+    margin-left: 85%;
+}
+
+
+
+
+
+.post_popup{
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.801) none repeat scroll 0 0;
+    background-size: cover;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.post_popup:target{
+    opacity: 1;
+    visibility: visible;
+}
+
+.post_popup_content{
+    padding:3rem;
+    padding-left: 5rem;
+    padding-right: 7rem;
+    width: 75%;
+    background-color: rgba(255, 255, 255, 0.465);
+    box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.199);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 5px;
+    overflow: auto;
+    overflow-y: scroll;
+}
+
+.post_popup_close:link,
+.post_popup_close:visited{
+    position: absolute;
+    color: black;
+    font-size: 4.5rem;
+    text-decoration: none;
+    background-color: #ffffff;
+    right: 1.5rem;
+    top: 1.5rem;
+    height: 5rem;
+    width: 5rem;
+    text-align: center;
+    border-radius: 50%;
+}
+
+.update_delete{
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    right: 0;
+    text-align: center;
+}
+
+.button{
+    background-color:white;
+    color: #005033fd;
+    text-decoration: none;
+    padding: 0.5rem;
+    margin-left: 1rem;
+    font-size: 1.8rem;
+    border-radius: 5px;
+}
+
+
+
+

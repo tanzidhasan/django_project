@@ -1,0 +1,158 @@
+.header{
+    height: 95vh;
+    background-image: linear-gradient(to right bottom,#616660c9, #0d0e0dc4) ,url("img/blood_background_home.jpg");
+    background-size: cover;
+    background-position: top;
+}
+
+.logo-box{
+    position: absolute;
+    padding: 1rem;
+}
+
+
+.logo{
+    width: 5rem;
+    height: 5.5rem;
+}
+
+.logo_text{
+    font-size: 1.65rem;
+    color: #f34242;
+
+}
+
+.btn:link,
+.btn:visited{
+    text-decoration: none;
+    display: inline-block;
+}
+
+.text-main{
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: #ffffff;
+    text-align: center;
+}
+
+.textdb{
+    display: block;
+    font-size: 5rem;
+    font-weight: 400;
+    letter-spacing: 3rem;
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+}
+
+.textor{
+    position: relative;
+    text-transform: uppercase;
+    top: 2.5rem;
+    right: 1rem;
+    display: inline-block;
+    font-size: 3.5rem;
+    font-weight: 700;
+    animation-name: moveInBottom;
+    animation-duration: 1s;
+}
+
+.textsl{
+    position: relative;
+    top: 5rem;
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 1.5rem;
+    animation-name: moveInRight;
+    animation-duration: 1s;
+}
+
+.register{
+    background-color: white;
+    color: #000000;
+    display: inline-block;
+    font-size: 2rem;
+    position: relative;
+    top: 2.5rem;
+    right: 3rem;
+}
+
+.login{
+    background-color: white;
+    color: #000000;
+    display: inline-block;
+    font-size: 2rem;
+    position: relative;
+    top: 2.5rem;
+    left: 1.5rem;
+}
+
+.butn:link,
+.butn:visited{
+    text-decoration: none;
+    display: inline-block;
+    text-transform: uppercase;
+    padding: 1.5rem 4rem;
+    border-radius: 10rem;
+    transition: all;
+}
+
+.butn:hover{
+    transform: translateY(-0.3rem);
+}
+.butn:active{
+    transform: translateY(-0.1rem);
+}
+
+
+
+
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        transform: translate(-10rem)
+    }
+
+    80% {
+        transform: translate(2rem)
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translate(10rem)
+    }
+
+    80% {
+        transform: translate(-2rem)
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        transform: translate(0,10rem)
+    }
+
+    80% {
+        transform: translate(0,-1rem)
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0,0);
+    }
+}

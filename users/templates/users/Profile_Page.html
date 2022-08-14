@@ -1,0 +1,169 @@
+{% extends 'blog/Common.html' %}
+{% load static %}
+
+        {% block head %}    
+            <link rel="stylesheet" href=" {% static 'users/Profile_Page_style.css' %} ">
+            <link rel="shortcut icon" type="image/jpg" href=" {% static 'users/img/Background_image.jpg' %} ">
+            <title>নিরাপদ রক্তের বন্ধন(নিরব) | NIrapod ROkter Bondhon(NIROB) - Profile</title>
+        {% endblock head %}
+    
+    {% block body %}
+
+        <main class="main">
+            <header class="header">
+                <div class="logo-box">
+                    <a href="{% url 'blog-home' %}" class="btn logo"><img src=" {% static 'users/img/Logo_image.jpg' %} " alt="Logo" class="logo"></a>
+                    <a href="{% url 'blog-home' %}" class="btn logo_text"><h2><b>নিরাপদ রক্তের বন্ধন(নিরব)<br>NIrapod ROkter Bondhon(NIROB)</b></h2></a>
+                </div>
+            </header>
+
+            <section class="section-profile">
+
+                <div class="u-center-text_pro">
+                    <span class="profile_heading">Profile</span>
+                </div>
+
+                <div class="row-pro">
+                    <div class="profile">
+                        <div class="profile__text">
+                            <div class="attribute">
+                                <span class="attr_name">Username : </span>
+                                <span class="attr_data">{{ user.username }}</span>
+                            </div>
+                            <div class="attribute">
+                                <span class="attr_name">Gender : </span>
+                                <span class="attr_data">{{ user.profile.gender }}</span>
+                            </div>
+                            <div class="attribute">
+                                <span class="attr_name">Roll No : </span>
+                                <span class="attr_data">{{ user.profile.rollno }}</span>
+                            </div>
+                            <div class="attribute">
+                                <span class="attr_name">Email : </span>
+                                <span class="attr_data">{{ user.email }}</span>
+                            </div>
+                            <div class="attribute">
+                                <span class="attr_name">Blood Group : </span>
+                                <span class="attr_data">{{ user.profile.bloodgroup }}</span>
+                            </div>
+                            <div class="attribute">
+                                <span class="attr_name">Last Blood Donation Date : </span>
+                                <span class="attr_data">{{ user.profile.lastblooddonationdate }}</span>
+                            </div>
+                            <div class="attribute">
+                                <span class="attr_name">Phone Number : </span>
+                                <span class="attr_data">0{{ user.profile.phonenumber }}</span>
+                            </div>
+                            <div class="attribute">
+                                <span class="attr_name">Current Location : </span>
+                                <span class="attr_data">{{ user.profile.currentlocation }}</span>
+                            </div>
+                        </div>
+                        <div class="update_delete">
+                            <a href="" class="button">Update</a>
+                            <a href="" class="button">Delete</a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="u-center-text_post">
+                    <span class="post_heading">Own Post</span>
+                </div>
+
+
+                {% for post in posts %}
+                {% if post.user == user %}
+                <div class="row">
+                    <div class="post">
+                        <div class="post_header">
+                            <div class="post_title">
+                                <a href="#post/{{ post.id }}" class="post_title_text">{{ post.posttitle }}</a>
+                            </div>
+                            <div class="author_date">
+                                On <span class="date">{{ post.posteddatetime }}</span>
+                            </div>
+                        </div>
+                        <div class="post_body">
+                            <div class="post_attr">
+                                <span class="post_attr_name">Relation with RUETian : </span>
+                                <span class="post_attr_data">{{ post.relationwithruetians }}</span>
+                            </div>
+                            <div class="post_attr">
+                                <span class="post_attr_name">Needed Blood Group : </span>
+                                <span class="post_attr_data">{{ post.bloodgroup }}</span>
+                            </div>
+                            <div class="post_attr">
+                                <span class="post_attr_name">Needed Bags of Blood : </span>
+                                <span class="post_attr_data">{{ post.howmanybagsofblood }}</span>
+                            </div>
+                            <div class="post_attr">
+                                <span class="post_attr_name">Location : </span>
+                                <span class="post_attr_data">{{ post.currentlocation }}</span>
+                            </div>
+                            <a href="#post/{{ post.id }}" class="post_details">Details</a>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                {% endfor %}
+
+                <!--for post details show popup-->
+                {% for post in posts %}
+                <div class="post_popup" id="post/{{ post.id }}">
+                    <div class="post_popup_content">
+
+                        <div class="post_header">
+                            <div class="post_title">
+                                <span class="post_title_text">{{ post.posttitle }}</span>
+                            </div>
+                            <div class="author_date">
+                                On <span class="date">{{ post.posteddatetime }}</span>
+                            </div>
+                            <a href="#/" class="post_popup_close">&times;</a>
+                        </div>
+
+                        <div class="post_body">
+                            <div class="post_attr">
+                                <span class="post_attr_name">Relation with RUETian : </span>
+                                <span class="post_attr_data">{{ post.relationwithruetians }}</span>
+                            </div>
+                            <div class="post_attr">
+                                <span class="post_attr_name">About Patient Disease : </span>
+                                <span class="post_attr_data">{{ post.patientdisease }}</span>
+                            </div>
+                            <div class="post_attr">
+                                <span class="post_attr_name">Needed Blood Group : </span>
+                                <span class="post_attr_data">{{ post.bloodgroup }}</span>
+                            </div>
+                            <div class="post_attr">
+                                <span class="post_attr_name">Needed Bags of Blood : </span>
+                                <span class="post_attr_data">{{ post.howmanybagsofblood }}</span>
+                            </div>
+                            <div class="post_attr">
+                                <span class="post_attr_name">Admitted Hospital Name : </span>
+                                <span class="post_attr_data">{{ post.admittedhospitalname }}</span>
+                            </div>
+                            <div class="post_attr">
+                                <span class="post_attr_name">Location : </span>
+                                <span class="post_attr_data">{{ post.currentlocation }}</span>
+                            </div>
+                            <div class="post_attr">
+                                <span class="post_attr_name">Phone Number : </span>
+                                <span class="post_attr_data">0{{ post.phonenumber }}</span>
+                            </div>
+                            <div class="post_attr">
+                                <span class="post_attr_name">Deadline : </span>
+                                <span class="post_attr_data">{{ post.deadlinedate }} / {{ post.deadlinetime }}</span>
+                            </div>
+                        </div>
+                        <div class="update_delete">
+                            <a href="/post/{{  post.id }}/update" class="button">Update</a>
+                            <a href="/post/{{  post.id }}/delete" class="button">Delete</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </section>
+        </main>
+    {% endblock body %}

@@ -1,0 +1,192 @@
+.main{
+    background-image: linear-gradient(to right bottom,#3ec0c0b4, #118d83ad) ,url("img/blood_background_donation.jpg");
+    background-size: cover;
+    background-position: top;
+}
+
+.header{
+    height: 10vh;
+    margin-bottom: 0.5rem;
+}
+
+.logo-box{
+    position: absolute;
+    padding: 1rem;
+}
+
+
+.logo{
+    width: 5rem;
+    height: 5.5rem;
+}
+
+.logo_text{
+    font-size: 1.65rem;
+    color: #f34242;
+
+}
+
+.btn:link,
+.btn:visited{
+    text-decoration: none;
+    display: inline-block;
+}
+
+.section-blood_donation{
+    padding: 2rem;
+}
+
+.u-center-text{
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.heading-secondary{
+    font-size: 3.5rem;
+    font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2rem;
+}
+
+.row{
+    max-width: 114rem;
+    margin: 0 auto;
+}
+
+.row:not(:last-child){
+    margin-bottom: 5rem;
+}
+
+.donation{
+    width: 75%;
+    margin: 0 auto;
+    box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.103);
+    background-color: white;
+    border-radius: 3px;
+    padding: 4rem;
+    padding-left: 6rem;
+    font-size: 1.6rem;
+    transform: scale(1) skewX(-15deg);
+}
+
+.donation__shape{
+    width: 10rem;
+    height: 10rem;
+    float: left;
+    -webkit-shape-outside: circle(50% at 50% 50%);
+    shape-outside: circle(50% at 50% 50%);
+    -webkit-clip-path: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+    transform: translateX(-2rem) skewX(15deg);
+    position: relative;
+}
+
+.donation__img{
+    height: 100%;
+    transform: scale(1.3);
+}
+
+
+.donation__text{
+    text-align: justify;
+    transform: skewX(15deg);
+}
+
+.heading_tertiary{
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color:  #043b37;
+}
+
+.donation:hover{
+    transform: scale(1.1) skewX(-15deg);
+}
+
+.donation:hover .donation__img{
+    transform: scale(1);
+}
+
+.popup{
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.801) none repeat scroll 0 0;
+    background-size: cover;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.popup:target{
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup__content{
+    padding: 5rem;
+    width: 75%;
+    height: 50rem;
+    background-color: white;
+    box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.199);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 5px;
+    overflow: auto;
+    overflow-y: scroll;
+}
+
+.popup-heading{
+    text-align: center;
+}
+
+
+.popup-heading_text{
+    display: inline-block;
+}
+
+.popup_close:link,
+.popup_close:visited{
+    position: absolute;
+    color: black;
+    font-size: 4.5rem;
+    text-decoration: none;
+    background-color: #b9b3b3;
+    right: 2.5rem;
+    top: 2.5rem;
+    height: 5rem;
+    width: 5rem;
+    border-radius: 50%;
+}
+
+.popup-secondary{
+    font-size: 4rem;
+    font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.15rem;
+    text-align: center;
+    margin-top: -3rem;
+    margin-bottom: 2rem;
+    color:  #043b37;
+}
+
+.popup-tertiary{
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-top: 1rem;
+    margin-bottom: 0rem;
+}
+
+.popup_text{
+    font-size: 1.8rem;
+    text-align: justify;
+    color: black;
+}
+
+.l-class{
+    padding-left: 2rem;
+}

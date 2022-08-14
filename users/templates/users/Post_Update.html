@@ -1,0 +1,530 @@
+{% extends 'blog/Common.html' %}
+{% load static %}
+
+        {% block head %}    
+            <link rel="stylesheet" href=" {% static 'users/Post_Update_style.css' %} ">
+            <link rel="shortcut icon" type="image/jpg" href=" {% static 'users/img/Background_image.jpg' %} ">
+            <title>নিরাপদ রক্তের বন্ধন(নিরব) | NIrapod ROkter Bondhon(NIROB) - Post Update</title>
+        {% endblock head %}
+    
+    {% block body %}
+
+        <main class="main">
+            <header class="header">
+                <div class="logo-box">
+                    <a href="{% url 'blog-home' %}" class="btn logo"><img src=" {% static 'users/img/Logo_image.jpg' %} " alt="Logo" class="logo"></a>
+                    <a href="{% url 'blog-home' %}" class="btn logo_text"><h2><b>নিরাপদ রক্তের বন্ধন(নিরব)<br>NIrapod ROkter Bondhon(NIROB)</b></h2></a>
+                </div>
+            </header>
+
+            <section class="section-blood_request">
+
+
+                <!--for post update show popup-->
+                {% if post.user == user %}
+                <div class="popup" id="post/{{ post.id }}/update">
+                    <div class="popup__content">
+                        <div class="popup-heading">
+                            <div class="popup-heading_text">
+                                <h2 class="popup-secondary">Update The Post</h2>
+                            </div>
+                            <a href="/blood_request/#post/{{post.id}}" class="popup_close">&times;</a>
+                        </div>
+                                
+                        <div class="post_pop">
+                            <div class="post__form">
+                                <form class="form" method="POST">
+
+                                {% csrf_token %}
+
+                                    <div class="form__group">
+                                        <input type="text" class="form__input"  value="{{ post.posttitle }}" name="posttitle" required>
+                                        <label for="posttitle" class="form__label">Post Title</label>
+                                    </div>
+                                    
+                        
+                                    <div class="form__group">
+                                        <select class="form__input" name="bloodgroup" required>
+                                            <option value="A+"
+                                            {% if post.bloodgroup == "A+" %}
+                                                selected
+                                            {% endif %}
+                                            >A+</option>
+                                            <option value="A-"
+                                            {% if post.bloodgroup == "A-" %}
+                                                selected
+                                            {% endif %}
+                                            >A-</option>
+                                            <option value="B+"
+                                            {% if post.bloodgroup == "B+" %}
+                                                selected
+                                            {% endif %}
+                                            >B+</option>
+                                            <option value="B-"
+                                            {% if post.bloodgroup == "B-" %}
+                                                selected
+                                            {% endif %}
+                                            >B-</option>
+                                            <option value="O+"
+                                            {% if post.bloodgroup == "O+" %}
+                                                selected
+                                            {% endif %}
+                                            >O+</option>
+                                            <option value="O-"
+                                            {% if post.bloodgroup == "O-" %}
+                                                selected
+                                            {% endif %}
+                                            >O-</option>
+                                            <option value="AB+"
+                                            {% if post.bloodgroup == "AB+" %}
+                                                selected
+                                            {% endif %}
+                                            >AB+</option>
+                                            <option value="AB-"
+                                            {% if post.bloodgroup == "AB-" %}
+                                                selected
+                                            {% endif %}
+                                            >AB-</option>
+                                            <option value="ABO"
+                                            {% if post.bloodgroup == "ABO" %}
+                                                selected
+                                            {% endif %}
+                                            >ABO</option>
+                                            
+                                        </select>
+                                        <label for="bloodgroup" class="form__label">Blood Group</label>
+                                    </div>
+
+                                    <div class="form__group">
+                                        <input type="number" class="form__input" min="1" value="{{ post.howmanybagsofblood }}" name="howmanybagsofblood" required>
+                                        <label for="howmanybagsofblood" class="form__label">How Many Bags of Blood</label>
+                                    </div>
+
+                                    <div class="form__group">
+                                        <input type="text" class="form__input" value="{{ post.patientdisease }}" name="patientdisease" required>
+                                        <label for="patientdisease" class="form__label">About Patient Disease</label>
+                                    </div>
+
+                                    <div class="form__group">
+                                        <input type="text" class="form__input" value="{{ post.admittedhospitalname }}" name="admittedhospitalname" required>
+                                        <label for="admittedhospitalname" class="form__label">Admitted Hospital Name</label>
+                                    </div>
+
+                        
+                                    <div class="form__group">
+                                        <input type="date" class="form__input" name="deadlinedate" required>
+                                        <label for="deadlinedate" class="form__label">Deadline Date</label>
+                                    </div>
+                                    
+
+                                    <div class="form__group">
+                                        <input type="time" class="form__input" name="deadlinetime" required>
+                                        <label for="deadlinetime" class="form__label">Deadline Time</label>
+                                    </div>
+
+                                    <div class="form__group">
+                                        <select class="form__input" spellcheck="true" name="currentlocation" required>
+                                            <option value="Bagerhat"
+                                            {% if post.currentlocation == "Bagerhat" %}
+                                                selected
+                                            {% endif %}
+                                            >Bagerhat</option>
+                                            <option value="Bandarban"
+                                            {% if post.currentlocation == "Bandarban" %}
+                                                selected
+                                            {% endif %}
+                                            >Bandarban</option>
+                                            <option value="Barguna"
+                                            {% if post.currentlocation == "Barguna" %}
+                                                selected
+                                            {% endif %}
+                                            >Barguna</option>
+                                            <option value="Barisal"
+                                            {% if post.currentlocation == "Barisal" %}
+                                                selected
+                                            {% endif %}
+                                            >Barisal</option>
+                                            <option value="Bhola"
+                                            {% if post.currentlocation == "Bhola" %}
+                                                selected
+                                            {% endif %}
+                                            >Bhola</option>
+                                            <option value="Bogra"
+                                            {% if post.currentlocation == "Bogra" %}
+                                                selected
+                                            {% endif %}
+                                            >Bogra</option>
+                                            <option value="Brahmanbaria"
+                                            {% if post.currentlocation == "Brahmanbaria" %}
+                                                selected
+                                            {% endif %}
+                                            >Brahmanbaria</option>
+                                            <option value="Chandpur"
+                                            {% if post.currentlocation == "Chandpur" %}
+                                                selected
+                                            {% endif %}
+                                            >Chandpur</option>
+                                            <option value="Chapainawabganj"
+                                            {% if post.currentlocation == "Chapainawabganj" %}
+                                                selected
+                                            {% endif %}
+                                            >Chapainawabganj</option>
+                                            <option value="Chittagong"
+                                            {% if post.currentlocation == "Chittagong" %}
+                                                selected
+                                            {% endif %}
+                                            >Chittagong</option>
+                                            <option value="Chuadanga"
+                                            {% if post.currentlocation == "Chuadanga" %}
+                                                selected
+                                            {% endif %}
+                                            >Chuadanga</option>
+                                            <option value="Comilla"
+                                            {% if post.currentlocation == "Comilla" %}
+                                                selected
+                                            {% endif %}
+                                            >Comilla</option>
+                                            <option value="Cox's Bazar"
+                                            {% if post.currentlocation == "Cox's Bazar" %}
+                                                selected
+                                            {% endif %}
+                                            >Cox's Bazar</option>
+                                            <option value="Dhaka" 
+                                            {% if post.currentlocation == "Dhaka" %}
+                                                selected
+                                            {% endif %}
+                                            >Dhaka</option>
+                                            <option value="Dinajpur"
+                                            {% if post.currentlocation == "Dinajpur" %}
+                                                selected
+                                            {% endif %}
+                                            >Dinajpur</option>
+                                            <option value="Faridpur"
+                                            {% if post.currentlocation == "Faridpur" %}
+                                                selected
+                                            {% endif %}
+                                            >Faridpur</option>
+                                            <option value="Feni"
+                                            {% if post.currentlocation == "Feni" %}
+                                                selected
+                                            {% endif %}
+                                            >Feni</option>
+                                            <option value="Gaibandha"
+                                            {% if post.currentlocation == "Gaibandha" %}
+                                                selected
+                                            {% endif %}
+                                            >Gaibandha</option>
+                                            <option value="Gazipur"
+                                            {% if post.currentlocation == "Gazipur" %}
+                                                selected
+                                            {% endif %}
+                                            >Gazipur</option>
+                                            <option value="Gopalganj"
+                                            {% if post.currentlocation == "Gopalganj" %}
+                                                selected
+                                            {% endif %}
+                                            >Gopalganj</option>
+                                            <option value="Habiganj"
+                                            {% if post.currentlocation == "Habiganj" %}
+                                                selected
+                                            {% endif %}
+                                            >Habiganj</option>
+                                            <option value="Jamalpur"
+                                            {% if post.currentlocation == "Jamalpur" %}
+                                                selected
+                                            {% endif %}
+                                            >Jamalpur</option>
+                                            <option value="Jessore"
+                                            {% if post.currentlocation == "Jessore" %}
+                                                selected
+                                            {% endif %}
+                                            >Jessore</option>
+                                            <option value="Jhalokati"
+                                            {% if post.currentlocation == "Jhalokati" %}
+                                                selected
+                                            {% endif %}
+                                            >Jhalokati</option>
+                                            <option value="Jhenaidah"
+                                            {% if post.currentlocation == "Jhenaidah" %}
+                                                selected
+                                            {% endif %}
+                                            >Jhenaidah</option>
+                                            <option value="Joypurhat"
+                                            {% if post.currentlocation == "Joypurhat" %}
+                                                selected
+                                            {% endif %}
+                                            >Joypurhat</option>
+                                            <option value="Khagrachhari"
+                                            {% if post.currentlocation == "Khagrachhari" %}
+                                                selected
+                                            {% endif %}
+                                            >Khagrachhari</option>
+                                            <option value="Khulna"
+                                            {% if post.currentlocation == "Khulna" %}
+                                                selected
+                                            {% endif %}
+                                            >Khulna</option>
+                                            <option value="Kishoreganj"
+                                            {% if post.currentlocation == "Kishoreganj" %}
+                                                selected
+                                            {% endif %}
+                                            >Kishoreganj</option>
+                                            <option value="Kurigram"
+                                            {% if post.currentlocation == "Kurigram" %}
+                                                selected
+                                            {% endif %}
+                                            >Kurigram</option>
+                                            <option value="Kushtia"
+                                            {% if post.currentlocation == "Kushtia" %}
+                                                selected
+                                            {% endif %}
+                                            >Kushtia</option>
+                                            <option value="Lakshmipur"
+                                            {% if post.currentlocation == "Lakshmipur" %}
+                                                selected
+                                            {% endif %}
+                                            >Lakshmipur</option>
+                                            <option value="Lalmonirhat"
+                                            {% if post.currentlocation == "Lalmonirhat" %}
+                                                selected
+                                            {% endif %}
+                                            >Lalmonirhat</option>
+                                            <option value="Madaripur"
+                                            {% if post.currentlocation == "Madaripur" %}
+                                                selected
+                                            {% endif %}
+                                            >Madaripur</option>
+                                            <option value="Magura"
+                                            {% if post.currentlocation == "Magura" %}
+                                                selected
+                                            {% endif %}
+                                            >Magura</option>
+                                            <option value="Manikganj"
+                                            {% if post.currentlocation == "Manikganj" %}
+                                                selected
+                                            {% endif %}
+                                            >Manikganj</option>
+                                            <option value="Meherpur"
+                                            {% if post.currentlocation == "Meherpur" %}
+                                                selected
+                                            {% endif %}
+                                            >Meherpur</option>
+                                            <option value="Moulvibazar"
+                                            {% if post.currentlocation == "Moulvibazar" %}
+                                                selected
+                                            {% endif %}
+                                            >Moulvibazar</option>
+                                            <option value="Munshiganj"
+                                            {% if post.currentlocation == "Munshiganj" %}
+                                                selected
+                                            {% endif %}
+                                            >Munshiganj</option>
+                                            <option value="Mymensingh"
+                                            {% if post.currentlocation == "Mymensingh" %}
+                                                selected
+                                            {% endif %}
+                                            >Mymensingh</option>
+                                            <option value="Naogaon"
+                                            {% if post.currentlocation == "Naogaon" %}
+                                                selected
+                                            {% endif %}
+                                            >Naogaon</option>
+                                            <option value="Narail"
+                                            {% if post.currentlocation == "Narail" %}
+                                                selected
+                                            {% endif %}
+                                            >Narail</option>
+                                            <option value="Narayanganj"
+                                            {% if post.currentlocation == "Narayanganj" %}
+                                                selected
+                                            {% endif %}
+                                            >Narayanganj</option>
+                                            <option value="Narsingdi"
+                                            {% if post.currentlocation == "Narsingdi" %}
+                                                selected
+                                            {% endif %}
+                                            >Narsingdi</option>
+                                            <option value="Natore"
+                                            {% if post.currentlocation == "Natore" %}
+                                                selected
+                                            {% endif %}
+                                            >Natore</option>
+                                            <option value="Netrokona"
+                                            {% if post.currentlocation == "Netrokona" %}
+                                                selected
+                                            {% endif %}
+                                            >Netrokona</option>
+                                            <option value="Nilphamari"
+                                            {% if post.currentlocation == "Nilphamari" %}
+                                                selected
+                                            {% endif %}
+                                            >Nilphamari</option>
+                                            <option value="Noakhali"
+                                            {% if post.currentlocation == "Noakhali" %}
+                                                selected
+                                            {% endif %}
+                                            >Noakhali</option>
+                                            <option value="Pabna"
+                                            {% if post.currentlocation == "Pabna" %}
+                                                selected
+                                            {% endif %}
+                                            >Pabna</option>
+                                            <option value="Panchagarh"
+                                            {% if post.currentlocation == "Panchagarh" %}
+                                                selected
+                                            {% endif %}
+                                            >Panchagarh</option>
+                                            <option value="Patuakhali"
+                                            {% if post.currentlocation == "Patuakhali" %}
+                                                selected
+                                            {% endif %}
+                                            >Patuakhali</option>
+                                            <option value="Pirojpur"
+                                            {% if post.currentlocation == "Pirojpur" %}
+                                                selected
+                                            {% endif %}
+                                            >Pirojpur</option>
+                                            <option value="Rajbari"
+                                            {% if post.currentlocation == "Rajbari" %}
+                                                selected
+                                            {% endif %}
+                                            >Rajbari</option>
+                                            <option value="Rajshahi"
+                                            {% if post.currentlocation == "Rajshahi" %}
+                                                selected
+                                            {% endif %}
+                                            >Rajshahi</option>
+                                            <option value="Rangamati"
+                                            {% if post.currentlocation == "Rangamati" %}
+                                                selected
+                                            {% endif %}
+                                            >Rangamati</option>
+                                            <option value="Rangpur"
+                                            {% if post.currentlocation == "Rangpur" %}
+                                                selected
+                                            {% endif %}
+                                            >Rangpur</option>
+                                            <option value="Satkhira"
+                                            {% if post.currentlocation == "Satkhira" %}
+                                                selected
+                                            {% endif %}
+                                            >Satkhira</option>
+                                            <option value="Shariatpur"
+                                            {% if post.currentlocation == "Shariatpur" %}
+                                                selected
+                                            {% endif %}
+                                            >Shariatpur</option>
+                                            <option value="Sherpur"
+                                            {% if post.currentlocation == "Sherpur" %}
+                                                selected
+                                            {% endif %}
+                                            >Sherpur</option>
+                                            <option value="Sirajganj"
+                                            {% if post.currentlocation == "Sirajganj" %}
+                                                selected
+                                            {% endif %}
+                                            >Sirajganj</option>
+                                            <option value="Sunamganj"
+                                            {% if post.currentlocation == "Sunamganj" %}
+                                                selected
+                                            {% endif %}
+                                            >Sunamganj</option>
+                                            <option value="Sylhet"
+                                            {% if post.currentlocation == "Sylhet" %}
+                                                selected
+                                            {% endif %}
+                                            >Sylhet</option>
+                                            <option value="Tangail"
+                                            {% if post.currentlocation == "Tangail" %}
+                                                selected
+                                            {% endif %}
+                                            >Tangail</option>
+                                            <option value="Thakurgaon"
+                                            {% if post.currentlocation == "Thakurgaon" %}
+                                                selected
+                                            {% endif %}
+                                            >Thakurgaon</option>
+                                        </select>
+                                        <label for="currentlocation" class="form__label">Current Location</label>
+                                    </div>
+
+                                    <div class="form__group">
+                                        <input type="number" class="form__input" min="1100000000" max="1999999999" value="{{ post.phonenumber }}" name="phonenumber" required>
+                                        <label for="phonenumber" class="form__label">Phone Number</label>
+                                    </div>
+
+                                    <div class="form__group">
+                                        <select class="form__input" spellcheck="true" name="relationwithruetians" required>
+                                            <option value="Father"
+                                            {% if post.relationwithruetians == "Father" %}
+                                                selected
+                                            {% endif %}
+                                            >Father</option>
+                                            <option value="Mother"
+                                            {% if post.relationwithruetians == "Mother" %}
+                                                selected
+                                            {% endif %}
+                                            >Mother</option>
+                                            <option value="Sister"
+                                            {% if post.relationwithruetians == "Sister" %}
+                                                selected
+                                            {% endif %}
+                                            >Sister</option>
+                                            <option value="Brother"
+                                            {% if post.relationwithruetians == "Brother" %}
+                                                selected
+                                            {% endif %}
+                                            >Brother</option>
+                                            <option value="Wife"
+                                            {% if post.relationwithruetians == "Wife" %}
+                                                selected
+                                            {% endif %}
+                                            >Wife</option>
+                                            <option value="Friend"
+                                            {% if post.relationwithruetians == "Friend" %}
+                                                selected
+                                            {% endif %}
+                                            >Friend</option>
+                                            <option value="Grandfather"
+                                            {% if post.relationwithruetians == "Grandfather" %}
+                                                selected
+                                            {% endif %}
+                                            >Grandfather</option>
+                                            <option value="Grandmother"
+                                            {% if post.relationwithruetians == "Grandmother" %}
+                                                selected
+                                            {% endif %}
+                                            >Grandmother</option>
+                                            <option value="Uncle"
+                                            {% if post.relationwithruetians == "Uncle" %}
+                                                selected
+                                            {% endif %}
+                                            >Uncle</option>
+                                            <option value="Aunt"
+                                            {% if post.relationwithruetians == "Aunt" %}
+                                                selected
+                                            {% endif %}
+                                            >Aunt</option>
+                                            <option value="Cousin"
+                                            {% if post.relationwithruetians == "Cousin" %}
+                                                selected
+                                            {% endif %}
+                                            >Cousin</option>
+                                        </select>
+                                        <label for="relationwithruetians" class="form__label">Relation with RUETian's</label>
+                                    </div>
+
+                                    <div class="form_group">
+                                        <button class="butn butn--green" type="submit">Update</button>
+                                    </div>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+            </section>
+
+        </main>
+    {% endblock body %}

@@ -1,0 +1,129 @@
+.section-register{
+    height: 97%;
+    padding: 5rem;
+    background-image: linear-gradient(to right bottom, #05f7ffe3, #089fc5e7);
+    background-size: 100%;
+}
+
+.register{
+    background-image: linear-gradient(105deg, rgba(250, 245, 245, 0.904) 0%, rgb(255, 255, 255) 55%, transparent 45%), url("img/blood_background_register.jpg");
+    background-size: 100%;
+    padding-bottom: 2rem;
+    border-radius: 3px;
+}
+
+.register__form{
+    width: 50%;
+    padding-top: 2rem;
+    padding-left: 4rem;
+}
+
+.register-heading{
+    margin-bottom: 1rem;
+}
+
+.register-heading_text{
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    display: inline-block;
+    letter-spacing: .2rem;
+    color: #089fc5e7;
+}
+.register-checking-text{
+    padding-left: 3rem;
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 700;
+    display: inline-block;
+    letter-spacing: .1rem;
+    color: #9c1717e7;
+}
+
+.login_text{
+    text-decoration: none;
+    color: rgb(104, 6, 25);
+}
+
+.form__group:not(:last-child){
+    margin-bottom: 0.5rem;
+}
+
+.form__input[type=number]::-webkit-inner-spin-button, 
+.form__input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+.form__input[type=date]::-webkit-inner-spin-button, 
+.form__input[type=date]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+.form__input{
+    font-size: 1.5rem;
+    color: black;
+    padding: 1.5rem 2rem;
+    background-color: #05f7ff41;
+    border: none;
+    width: 65%;
+}
+
+.form__input:focus{
+    outline: none;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.103);
+    border-bottom: 3px solid #11b302e7;
+}
+
+.form__input:focus:invalid{
+    border-bottom: 3px solid #a80808e7;
+}
+
+.form__input::-webkit-input-placeholder{
+    color: #1e1e1f;
+}
+
+.form__label{
+    font-size: 1.5rem;
+    margin-left: 2rem;
+}
+
+
+.form__input:placeholder-shown + .form__label{
+    opacity: 0;
+    visibility: hidden;
+}
+
+.btn,
+.btn:link,
+.btn:visited{
+    text-transform: uppercase;
+    text-decoration: none;
+    left: 17%;
+    margin-top: 1rem;
+    padding: 1.5rem 4rem;
+    display: inline-block;
+    border-radius: 10rem;
+    position: relative;
+    border: none;
+    color: black;
+}
+
+.btn:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.199);
+}
+
+.btn:hover::after{
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+
+.btn:active,
+.btn:focus{
+    outline: none;
+    transform: translateY(-1px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.199);
+}
+

@@ -1,0 +1,115 @@
+.main{
+    height: 95vh;
+    background-image: linear-gradient(to right bottom,#d5dbd3c9, #939b93c4) ,url("img/blood_background_about.jpg");
+    background-size: cover;
+    background-position: top;
+}
+
+.header{
+    height: 10vh;
+    margin-bottom: 0.5rem;
+}
+
+.logo-box{
+    position: absolute;
+    padding: 1rem;
+}
+
+
+.logo{
+    width: 5rem;
+    height: 5.5rem;
+}
+
+.logo_text{
+    font-size: 1.65rem;
+    color: #f34242;
+
+}
+
+.btn:link,
+.btn:visited{
+    text-decoration: none;
+    display: inline-block;
+}
+
+.section-about{
+    padding: 2rem;
+    height: 80vh;
+}
+
+.u-center-text{
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.heading-secondary{
+    font-size: 3.5rem;
+    color: blue;
+    font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2rem;
+}
+
+.row{
+    max-width: 114rem;
+    margin: 0 auto;
+}
+
+.row:not(:last-child){
+    margin-bottom: 5rem;
+}
+
+.column{
+    float: left;
+    width: 45%;
+}
+
+.column:not(:last-child){
+    margin-right: 10rem;
+}
+
+.paragraph{
+    font-size: 2rem;
+    color: rgb(3, 53, 73);
+    text-align: justify;
+}
+
+.composition{
+    position: relative;
+
+}
+
+.composition__photo{
+    width: 50%;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.404);
+    border-radius: 2px;
+    position: absolute;
+    z-index: 10;
+    transition: all 0.1s;
+}
+
+.composition__photo--p1{
+    left: 5rem;
+    top: 2rem;
+}
+
+.composition__photo--p2{
+    right: 5rem;
+    top: 10rem;
+}
+
+.composition__photo--p3{
+    left: 10rem;
+    top: 18rem;
+}
+
+.composition__photo:hover{
+    transform: scale(1.05);
+    box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.5);
+    z-index: 20;
+}
+
+
+
+

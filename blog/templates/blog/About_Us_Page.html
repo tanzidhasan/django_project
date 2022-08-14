@@ -1,0 +1,47 @@
+{% extends 'blog/Common.html' %}
+{% load static %}
+ 
+    {% block head %}
+        <title>নিরাপদ রক্তের বন্ধন(নিরব) | NIrapod ROkter Bondhon(NIROB) - About Us</title>
+        <link rel="shortcut icon" type="image/jpg" href=" {% static 'blog/img/Background_image.jpg' %} " class="icon_image">
+        <link rel="stylesheet" href="{% static 'blog/About_Us_Page_style.css' %}">
+    {% endblock head %}
+
+{% block body %}
+    
+    <main class="main">
+        <header class="header">
+            <div class="logo-box">
+                <a href="{% url 'blog-home' %}" class="btn logo"><img src=" {% static 'blog/img/Logo_image.jpg' %} " alt="Logo" class="logo"></a>
+                <a href="{% url 'blog-home' %}" class="btn logo_text"><h2><b>নিরাপদ রক্তের বন্ধন(নিরব)<br>NIrapod ROkter Bondhon(NIROB)</b></h2></a>
+            </div>
+        </header>
+
+        <section class="section-about">
+            <div class="u-center-text">
+                <h2 class="heading-secondary">
+                    About NIROB
+                </h2>   
+            </div>
+
+            <div class="row">
+                <div class="column">
+                    <p class="paragraph">
+                        For a very long time, blood is donated for human and by human. In accident or operation, if there is continuous bleeding, a lot of blood will need. For critical situation in pregnancy operation or any kind of big accident, donating blood is compulsory.<br>
+                        Alternative for human blood can only be safe(NIrapod) human blood. From humanity and for donating safe blood, journey of freewill blood donating club of Rajshahi University of Engineering and Technology(RUET) "NIrapod ROkter Bondhon(NIROB)"  was started by student of RUET.<br>
+                        NIrapod ROkter Bondhon(NIROB) is a volunteer club of RUET. Spreading the freewill of donating blood among everyone is the our real aim.<br>
+                        <br>"Donate Blood, Save Life."<br>
+                    </p>
+                </div>
+                <div class="column">
+                    <div class="composition">
+                        <img src=" {% static 'blog/img/about_photo_1.jpg' %} " alt="About Photo 1" class="composition__photo composition__photo--p1">
+                        <img src=" {% static 'blog/img/about_photo_2.jpg' %} " alt="About Photo 2" class="composition__photo composition__photo--p2">
+                        <img src=" {% static 'blog/img/about_photo_3.jpg' %} " alt="About Photo 3" class="composition__photo composition__photo--p3">
+                    </div>
+                </div>
+            </div> 
+        </section>
+    </main>
+    
+{% endblock body %}

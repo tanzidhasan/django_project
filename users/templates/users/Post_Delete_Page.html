@@ -1,0 +1,52 @@
+{% extends 'blog/Common.html' %}
+{% load static %}
+
+        {% block head %}    
+            <link rel="stylesheet" href=" {% static 'users/Post_Delete_Page_Style.css' %} ">
+            <link rel="shortcut icon" type="image/jpg" href=" {% static 'users/img/Background_image.jpg' %} ">
+            <title>নিরাপদ রক্তের বন্ধন(নিরব) | NIrapod ROkter Bondhon(NIROB) - Post Update</title>
+        {% endblock head %}
+    
+    {% block body %}
+
+        <main class="main">
+            <header class="header">
+                <div class="logo-box">
+                    <a href="{% url 'blog-home' %}" class="btn logo"><img src=" {% static 'users/img/Logo_image.jpg' %} " alt="Logo" class="logo"></a>
+                    <a href="{% url 'blog-home' %}" class="btn logo_text"><h2><b>নিরাপদ রক্তের বন্ধন(নিরব)<br>NIrapod ROkter Bondhon(NIROB)</b></h2></a>
+                </div>
+            </header>
+
+            <section class="section-blood_request">
+
+
+                <!--for post update show popup-->
+                {% if post.user == user %}
+                <div class="popup" id="post/{{ post.id }}/update">
+                    <div class="popup__content">
+                        <div class="popup-heading">
+                            <div class="popup-heading_text">
+                                <h2 class="popup-secondary">Delete The Post</h2>
+                            </div>
+                            <a href="/blood_request/#post/{{post.id}}" class="popup_close">&times;</a>
+                        </div>
+                                
+                        <div class="post_pop">
+                            <div class="post__form">
+                                <form class="form" method="POST">
+                                {% csrf_token %}
+                                    <div class="form_group">
+                                        <button class="butn butn--green" type="submit">Delete</button>
+                                        <a class="butn butn--green" href="/blood_request/#post/{{post.id}}">Cancel</a>
+                                    </div>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+            </section>
+
+        </main>
+    {% endblock body %}
